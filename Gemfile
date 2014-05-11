@@ -4,6 +4,7 @@ gem 'rails', '3.2.18'
 
 gem 'pg'
 gem 'devise'
+gem 'haml'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,6 +23,7 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'selenium-webdriver'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end

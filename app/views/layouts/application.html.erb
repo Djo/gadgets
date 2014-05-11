@@ -7,8 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+    <div id="content">
+      <header>
+        <% if user_signed_in? %>
+          <%= link_to 'Gadgets', gadgets_path %> |
+          <%= link_to current_user.email, edit_user_registration_path %> |
+          <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>
+        <% else %>
+          <%= link_to 'Login', new_user_session_path %>
+        <% end %>
+      </header>
 
-<%= yield %>
+      <% [:notice, :alert].each do |type| %>
+        <% unless flash[type].blank? %>
+          <div class="flash <%= type %>"><%= flash[type] %></div>
+        <% end %>
+      <% end %>
 
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,45 @@
+body {
+  background-color: #4B7399;
+  font-family: Verdana, Helvetica, Arial;
+  font-size: 14px;
+}
+
+a {
+  color: #0000FF;
+}
+
+h2 {
+  font-family: Arial;
+  margin-bottom: 0.2em;
+}
+
+#wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+#content {
+  background-color: #FFF;
+  padding: 25px 40px;
+  border: solid 1px black;
+  margin-top: 30px;  
+}
+
+header {
+  text-align: right;
+}
+
+.flash {
+  padding: 5px 8px;
+  margin: 10px 0;
+
+  &.notice {
+    background-color: #CFC;
+    border: solid 1px #6C6;
+  }
+
+  &.alert {
+    background-color: #FCC;
+    border: solid 1px #C66;
+  }  
+}
