@@ -11,6 +11,7 @@
     <div id="content">
       <header>
         <% if user_signed_in? %>
+          <%= link_to 'Create one', new_gadget_path %> |
           <%= link_to 'Gadgets', gadgets_path %> |
           <%= link_to current_user.email, edit_user_registration_path %> |
           <%= link_to 'Logout', destroy_user_session_path, :method => 'delete' %>

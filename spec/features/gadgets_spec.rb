@@ -37,6 +37,26 @@ feature 'Gadgets' do
     page.should have_content('Your own gadgets (0)')
   end
 
+  scenario 'Searching by gadget names' do
+    user = log_in
+    create(:gadget, name: 'Super gadget', user: user)
+    create(:gadget, name: 'Superb gadget', user: user)
+
+    visit '/gadgets'
+    page.should have_content('Super gadget')
+    page.should have_content('Superb gadget')
+
+    fill_in 'search', with: 'Super'
+    click_button 'Search'
+    page.should have_content('Super gadget')
+    page.should have_content('Superb gadget')
+
+    fill_in 'search', with: 'Superb'
+    click_button 'Search'
+    page.should_not have_content('Super gadget')
+    page.should have_content('Superb gadget')
+  end
+
   def log_in
     user = create(:user)
     visit "/"

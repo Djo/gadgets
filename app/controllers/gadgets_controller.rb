@@ -4,6 +4,9 @@ class GadgetsController < ApplicationController
 
   def index
     @gadgets = current_user.gadgets
+    if params[:search].present?
+      @gadgets = @gadgets.where("gadgets.name ILIKE ?", "%#{params[:search]}%")
+    end
   end
 
   def new

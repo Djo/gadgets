@@ -1,6 +1,8 @@
 %h2 Your own gadgets (#{@gadgets.count})
 
-= link_to 'Create one', new_gadget_path
+= form_tag gadgets_path, method: :get do
+  = text_field_tag :search, params[:search], placeholder: 'Gadget name'
+  = submit_tag 'Search'
 
 %ul#gadgets
   - @gadgets.each do |gadget|
