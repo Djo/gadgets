@@ -1,1 +1,9 @@
-Your own gadgets.
+%h2 Your own gadgets (#{@gadgets.count})
+
+= link_to 'Create one', new_gadget_path
+
+%ul#gadgets
+  - @gadgets.each do |gadget|
+    %li
+      = gadget.name
+      = link_to 'delete', gadget_path(gadget), :confirm => 'Are you sure?', :method => :delete

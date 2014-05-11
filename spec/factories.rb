@@ -4,4 +4,9 @@ FactoryGirl.define do
     password "strongpassword"
     password_confirmation "strongpassword"
   end
+
+  factory :gadget do
+    user
+    name 'Gadget'
+  end
 end

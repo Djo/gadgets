@@ -3,7 +3,7 @@ Gadgets::Application.routes.draw do
 
   root to: 'gadgets#index'
 
-  resources :gadgets, only: [:index]
+  resources :gadgets, only: [:index, :new, :create, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
